@@ -8,8 +8,8 @@ spec:
     matchLabels: 
       component: web
   template: 
-    metada: 
-      label: 
+    metadata: 
+      labels: 
         component: web
     spec:
       containers: 
