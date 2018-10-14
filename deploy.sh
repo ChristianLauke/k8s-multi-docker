@@ -18,5 +18,5 @@ kubectl apply -f k8s
 
 # Force to always use newest Image even without changes in configuration file(s)
 kubectl set image deployments/server-deployment server=clauke/k8s-multi-docker-client:$SHA
-kubectl set image deployments/server-deployment server=clauke/k8s-multi-docker-client:$SHA
-kubectl set image deployments/server-deployment server=clauke/k8s-multi-docker-client:$SHA
+kubectl set image deployments/server-deployment server=clauke/k8s-multi-docker-server:$SHA
+kubectl set image deployments/server-deployment server=clauke/k8s-multi-docker-worker:$SHA
