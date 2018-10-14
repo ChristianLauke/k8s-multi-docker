@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: client-deployment
-spec: 
+spec:
   replicas: 3
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       component: web
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         component: web
     spec:
-      containers: 
+      containers:
         - name: client
           image: clauke/multi-docker-client
           ports:
             - containerPort: 3000
-

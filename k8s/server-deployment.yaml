@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: server-deployment
 spec:
   replicas: 3
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       component: server
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         component: server
-    spec: 
-      containers: 
+    spec:
+      containers:
         - name: server
-          env: 
+          image: clauke/multi-docker-server
+          ports:
+            - containerPort: 5000
+          env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
@@ -28,10 +31,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              valueFrom: 
-                secretKeyRef: 
+              valueFrom:
+                secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
-          image: clauke/multi-docker-server
-          ports: 
-            - containerPort: 5000
