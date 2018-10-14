@@ -1,7 +1,7 @@
 # Building Images
-docker build -t clauke/k8s-multi-docker-client:latest -t clauke/k8s-multi-docker-client:$SHA ./client/Dockerfile ./client
-docker build -t clauke/k8s-multi-docker-server:latest -t clauke/k8s-multi-docker-server:$SHA ./server/Dockerfile ./server
-docker build -t clauke/k8s-multi-docker-worker:latest -t clauke/k8s-multi-docker-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t clauke/k8s-multi-docker-client:latest -t clauke/k8s-multi-docker-client:$SHA -f ./client/Dockerfile ./client
+docker build -t clauke/k8s-multi-docker-server:latest -t clauke/k8s-multi-docker-server:$SHA -f ./server/Dockerfile ./server
+docker build -t clauke/k8s-multi-docker-worker:latest -t clauke/k8s-multi-docker-worker:$SHA -f ./worker/Dockerfile ./worker
 
 # Push latest Images to Docker Hub
 docker push clauke/k8s-multi-docker-client:latest
