@@ -11,7 +11,7 @@ docker push cclauke/k8s-multi-docker-worker:latest
 # Push SHA Images to Docker Hub for Version controll
 docker push clauke/k8s-multi-docker-client:$SHA
 docker push clauke/k8s-multi-docker-server:$SHA
-docker push cclauke/k8s-multi-docker-worker:$SHA
+docker push clauke/k8s-multi-docker-worker:$SHA
 
 # Apply the K8S Config
 kubectl apply -f k8s
