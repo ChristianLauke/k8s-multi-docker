@@ -19,8 +19,9 @@ before_install:
 script:
   - docker run clauke/react-test npm test -- --coverage
 
-deploy:
-  provider: script
-  script: bash ./deploy.sh
-  on:
-    branch: master
+# # Deploy on Google
+# deploy:
+  # provider: script
+  # script: bash ./deploy.sh
+  # on:
+    # branch: master
